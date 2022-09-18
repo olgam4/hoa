@@ -21,7 +21,7 @@ export default function Root() {
         <Meta name="description" content="train your hoa" />
         <Link rel="icon" href="/favicon.ico" type="image/png" sizes="16x16" />
         <Link rel="apple-touch-icon" href="/pwa-192x192.png" sizes="192x192" />
-        <Meta name="theme-color" content="#F6F7F8" />
+        <Meta name="theme-color" content="#FEF9C3" />
         <Title>hoa</Title>
       </Head>
       <Body>
