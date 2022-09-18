@@ -19,7 +19,10 @@ const replaceOptions: Partial<RollupReplaceOptions> = {
 
 const pwaOptions: Partial<VitePWAOptions> = {
   base: '/',
-  includeAssets: ['favicon.ico', 'robots.txt'],
+  strategies: 'injectManifest',
+  srcDir: 'src',
+  filename: 'sw.js',
+  includeAssets: ['favicon.ico', 'robots.txt', 'localforage.min.js'],
   manifest: {
     name: 'hoa',
     short_name: 'hoa',

@@ -6,6 +6,7 @@ import cat1 from '@assets/cat/1.png'
 
 const Companion: Component = () => {
   const [quantity, setQuantity] = createSignal(0)
+
   const add = (e: any) => {
     e.preventDefault()
     setQuantity(quantity() + 1)
