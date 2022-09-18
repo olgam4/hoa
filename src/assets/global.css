@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+@layer components {
+  .btn {
+    @apply text-gray-400 transition hover:text-gray-400/50;
+  }
+}
+
+@layer utilities {
+  .full {
+    @apply absolute top-0 left-0 right-0 bottom-0;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .translate-z-0 {
+    transform: translateZ(0);
+  }
+
+  .translate-z-1 {
+    transform: translateZ(1px);
+  }
+
+  .translate-z-5 {
+    transform: translateZ(5px);
+  }
+
+  .scale-big {
+    transform: scale(250);
+  }
+
+}
