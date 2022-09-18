@@ -21,9 +21,9 @@ const pwaOptions: Partial<VitePWAOptions> = {
   base: '/',
   includeAssets: ['favicon.ico', 'robots.txt'],
   manifest: {
-    name: 'bat',
-    short_name: 'bat',
-    description: 'Opinionated, batteries included, PWA using Solid and Vite',
+    name: 'hoa',
+    short_name: 'hoa',
+    description: 'train your hoa',
     theme_color: '#ffffff',
     icons: [
       {
@@ -87,6 +87,7 @@ export default defineConfig({
       '@motionone/solid',
       'motion',
       'solid-toast',
+      'solid-particles',
     ],
   },
   resolve: {

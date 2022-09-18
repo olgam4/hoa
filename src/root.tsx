@@ -4,11 +4,7 @@ import { ErrorBoundary } from 'solid-start/error-boundary'
 import { Routes } from '@solidjs/router'
 import { Suspense } from 'solid-js'
 import { Toaster } from 'solid-toast'
-
 import './assets/global.css'
-import { ThemeProvider } from '@context/theme'
-import { Provider as LocaleProvider } from '@locales'
-import { HealthProvider } from '@context/health'
 import Providers from '@context/providers'
 
 export default function Root() {
