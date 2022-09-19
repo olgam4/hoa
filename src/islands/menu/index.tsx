@@ -2,16 +2,13 @@ import type { Component, FlowComponent } from 'solid-js'
 import Nourish from '@islands/nourish'
 import { createMenu } from './reactivity'
 import { Motion, Presence } from '@motionone/solid'
+import Drink from '@islands/drink'
 
 const Item: FlowComponent = (props) => {
   return (
-    <Motion.div
-      initial={{ opacity: 0, y: -50 }}
-      animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-      exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
-    >
+    <div class="my-1">
       {props.children}
-    </Motion.div>
+    </div>
   )
 }
 
@@ -33,12 +30,11 @@ const Menu: Component = () => {
           <Motion.div
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.5 } }}
-            exit={{ opacity: 0, y: -50, transition: { duration: 0.5 } }}
+            exit={{ opacity: 0, y: -15, transition: { duration: 0.5 } }}
             class="flex flex-col"
           >
             <Item children={<Nourish />} />
-            <Item children={<Nourish />} />
-            <Item children={<Nourish />} />
+            <Item children={<Drink />} />
           </Motion.div>
         </Show>
       </Presence>

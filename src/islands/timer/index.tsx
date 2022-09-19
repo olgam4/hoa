@@ -1,12 +1,19 @@
 import type { Component } from "solid-js"
 import { FoodContext } from '@context/food'
+import { WaterContext } from "@context/water"
 
 const Timer: Component = () => {
-  const [state] = useContext(FoodContext)
+  const [foodState] = useContext(FoodContext)
+  const [drinkState] = useContext(WaterContext)
   return (
-    <p>
-      {state.timer?.toFixed(0)}s since last meal
-    </p>
+    <>
+      <p>
+        {foodState.timer?.toFixed(0)}s since last meal
+      </p>
+      <p>
+        {drinkState.timer?.toFixed(0)}s since last water
+      </p>
+    </>
   )
 }
 
