@@ -61,7 +61,12 @@ export const createStatProvider = (context: ReturnType<typeof createStatContext>
           setState('level', level)
         },
         increaseLevel: (level: number) => {
-          setState('level', state.level + level)
+          const newLevel = state.level + level
+          if (newLevel > state.maxLevel) {
+            setState('level', state.maxLevel)
+          } else {
+            setState('level', newLevel)
+          }
         },
         setMaxLevel: (maxLevel: number) => {
           setState({ maxLevel })

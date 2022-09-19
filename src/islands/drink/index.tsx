@@ -1,5 +1,6 @@
 import { WaterContext } from "@context/water"
 import type { Component } from "solid-js"
+import toast from "solid-toast"
 
 const Nourish: Component = () => {
   const [_, actions] = useContext(WaterContext)
@@ -7,6 +8,7 @@ const Nourish: Component = () => {
   const drink = () => {
     actions.resetTimer()
     actions.increaseLevel(5)
+    toast("You drink some water", { icon: "💦" })
   }
 
   return (

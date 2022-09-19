@@ -8,7 +8,9 @@ export default function() {
       <Title>hoa - rps</Title>
       <Menu />
       <Companion />
+      <div class="mt-10">
       <RPS />
+      </div>
     </div>
   )
 }

@@ -29,7 +29,7 @@ export default function Root() {
                 <FileRoutes />
               </Routes>
               <Toaster
-                position="top-right"
+                position="bottom-center"
                 gutter={8}
                 containerClassName=""
                 containerStyle={{}}

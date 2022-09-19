@@ -1,5 +1,6 @@
 import { FoodContext } from "@context/food"
 import type { Component } from "solid-js"
+import toast from "solid-toast"
 
 const Nourish: Component = () => {
   const [_, actions] = useContext(FoodContext)
@@ -7,6 +8,7 @@ const Nourish: Component = () => {
   const eat = () => {
     actions.resetTimer()
     actions.increaseLevel(5)
+    toast("You eat an apple", { icon: "🍎" })
   }
 
   return (

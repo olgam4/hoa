@@ -11,9 +11,11 @@ export default function() {
       <Title>hoa</Title>
       <Menu />
       <Companion />
-      <Healthbar />
-      <Waterbar />
-      <Foodbar />
+      <div class="mt-10">
+        <Healthbar />
+        <Waterbar />
+        <Foodbar />
+      </div>
       <Timer />
     </div>
   )

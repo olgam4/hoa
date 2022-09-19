@@ -3,8 +3,8 @@ type Choices = 'rock' | 'paper' | 'scissors'
 const CHOICES = ['rock', 'paper', 'scissors'] as const
 
 export const BaseRPSState = {
-  lastCpuChoice: '',
-  lastPlayerChoice: '',
+  lastCpuChoice: 'THEM',
+  lastPlayerChoice: 'YOU',
   cpuScore: 0,
   playerScore: 0,
 }
@@ -25,6 +25,5 @@ export const play = (playerChoice: Choices, state?: typeof BaseRPSState): typeof
   currentState.lastPlayerChoice = playerChoice
   currentState.lastCpuChoice = cpuChoice
 
-  console.log('play', currentState)
   return currentState
 }
