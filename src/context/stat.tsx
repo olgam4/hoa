@@ -7,7 +7,6 @@ export const createStatContext = () => {
     {
       level: 100,
       maxLevel: 100,
-      ratio: () => 100,
       timer: 0,
     },
     {
@@ -28,36 +27,30 @@ const ONE_SECOND = 1000
 const ONE_MINUTE = 60 * ONE_SECOND
 const ONE_HOUR = 60 * ONE_MINUTE
 
-export const createStatProvider = (context: ReturnType<typeof createStatContext>, name: string) => {
+export const createStatProvider = (context: ReturnType<typeof createStatContext>) => {
   const Provider: FlowComponent<Props> = (props) => {
     const [lastUpdate, setLastUpdate] = createSignal(Date.now())
     const [state, setState] = createStore({
       level: props.level || 100,
       maxLevel: props.maxLevel || 100,
       timer: 0,
-      ratio() {
-        return (this.level / this.maxLevel) * 100
-      },
     })
 
-    if (name !== 'health') {
       const [timerState] = useContext(TimerContext)
       createEffect(() => {
         if (timerState.timer) {
           setState('timer', timerState.timer)
         }
       })
-    }
-
-    setInterval(() => {
-      if (state.timer) {
-        const diff = state.timer - lastUpdate()
-        if (diff > ONE_HOUR * 4) {
-          setState('level', state.level - 10)
-          setLastUpdate(Date.now())
+      setInterval(() => {
+        if (state.timer) {
+          const diff = state.timer - lastUpdate()
+          if (diff > ONE_HOUR * 4) {
+            setState('level', state.level - 10)
+            setLastUpdate(Date.now())
+          }
         }
-      }
-    }, ONE_SECOND * 5)
+      }, ONE_SECOND * 5)
 
     const wa = [
       state,
@@ -73,7 +66,7 @@ export const createStatProvider = (context: ReturnType<typeof createStatContext>
         },
         getTimer: () => {
           return state.timer - lastUpdate()
-        }
+        },
       }
     ] as Stat
 

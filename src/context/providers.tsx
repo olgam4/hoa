@@ -10,17 +10,17 @@ const Providers: FlowComponent = (props) => {
   return (
     <>
       <TimerProvider>
-        <HealthProvider>
-          <LocaleProvider>
-            <ThemeProvider>
-              <WaterProvider>
-                <FoodProvider>
+        <LocaleProvider>
+          <ThemeProvider>
+            <WaterProvider>
+              <FoodProvider>
+                <HealthProvider>
                   {props.children}
-                </FoodProvider>
-              </WaterProvider>
-            </ThemeProvider>
-          </LocaleProvider>
-        </HealthProvider>
+                </HealthProvider>
+              </FoodProvider>
+            </WaterProvider>
+          </ThemeProvider>
+        </LocaleProvider>
       </TimerProvider>
     </>
   )

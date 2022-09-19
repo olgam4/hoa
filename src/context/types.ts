@@ -2,7 +2,6 @@ export type Stat = [
   {
     level: number,
     maxLevel: number,
-    ratio: () => number,
     timer?: number,
   },
   {
