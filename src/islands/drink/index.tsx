@@ -5,7 +5,7 @@ const Nourish: Component = () => {
   const [_, actions] = useContext(WaterContext)
   return (
     <button onClick={actions.resetTimer}>
-      <div class="i-carbon-humidity w-[50px] h-[50px] text-red-600" />
+      <div class="i-carbon-humidity w-[50px] h-[50px] text-blue-600" />
     </button>
   )
 }
