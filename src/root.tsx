@@ -7,6 +7,7 @@ import { Toaster } from 'solid-toast'
 import './assets/global.css'
 import Providers from '@context/providers'
 import Menu from '@islands/menu'
+import Name from '@islands/name'
 
 export default function Root() {
   if (!isServer) navigator.serviceWorker.register('/sw.js')
@@ -26,6 +27,7 @@ export default function Root() {
         <ErrorBoundary>
           <Suspense>
             <Providers>
+              <Name />
               <Menu />
               <Routes>
                 <FileRoutes />

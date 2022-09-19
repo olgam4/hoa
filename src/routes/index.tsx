@@ -1,3 +1,4 @@
+import Layout from '@components/layout'
 import Companion from '@islands/companion'
 import Foodbar from '@islands/foodbar'
 import Healthbar from '@islands/healthbar'
@@ -6,8 +7,7 @@ import Waterbar from '@islands/waterbar'
 
 export default function() {
   return (
-    <div class="full bg-yellow-100 flex flex-center flex-col">
-      <Title>hoa</Title>
+      <Layout title={"hoa"}>
       <Companion />
       <div class="mt-10">
         <Healthbar />
@@ -15,6 +15,6 @@ export default function() {
         <Foodbar />
       </div>
       <Timer />
-    </div>
+    </Layout>
   )
 }
