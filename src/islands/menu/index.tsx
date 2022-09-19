@@ -33,8 +33,18 @@ const Menu: Component = () => {
             exit={{ opacity: 0, y: -15, transition: { duration: 0.5 } }}
             class="flex flex-col"
           >
+            <Item children={() => (
+              <a href="/" class="text-slate-400/50">
+                <div class="i-carbon-home w-[50px] h-[50px] text-slate-400/50" />
+              </a>
+            )} />
             <Item children={<Nourish />} />
             <Item children={<Drink />} />
+            <Item children={() => (
+              <a href="/rps" class="text-slate-400/50">
+                <div class="i-carbon-cut w-[50px] h-[50px] text-slate-400/50" />
+              </a>
+            )} />
           </Motion.div>
         </Show>
       </Presence>

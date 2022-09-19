@@ -8,12 +8,11 @@ const Companion: Component = () => {
   const [quantity, setQuantity] = createSignal(0)
 
   const add = (e: any) => {
-    e.preventDefault()
     setQuantity(quantity() + 1)
   }
 
   return (
-    <div class="relative select-none" onclick={add}>
+    <div class="relative select-none w-[300px] h-[300px]" onclick={add}>
       <Animation
         tileset={[cat0, cat1]}
         refresh={1000}
