@@ -16,7 +16,7 @@ type Props = {
   index?: number
 }
 
-const Skins = ['cat', 'biche']
+const Skins = ['cat', 'biche', 'bird']
 
 export const SkinProvider: FlowComponent<Props> = (props) => {
   const [state, setState] = createStore({
