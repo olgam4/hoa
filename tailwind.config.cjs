@@ -9,7 +9,7 @@ module.exports = {
 	plugins: [
     Icons({
       carbon: {
-        icons: ['apple']
+        icons: ['apple', 'menu', 'close-outline']
       }
     }),
   ],

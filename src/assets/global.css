@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap');
 
+@import url('/node_modules/hamburgers/dist/hamburgers.min.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
