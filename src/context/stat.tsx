@@ -24,11 +24,11 @@ interface Props {
   maxLevel?: number
 }
 
-const ONE_SECOND = 1000
-const ONE_MINUTE = 60 * ONE_SECOND
-const ONE_HOUR = 60 * ONE_MINUTE
+export const ONE_SECOND = 1000
+export const ONE_MINUTE = 60 * ONE_SECOND
+export const ONE_HOUR = 60 * ONE_MINUTE
 
-export const createStatProvider = (context: ReturnType<typeof createStatContext>) => {
+export const createStatProvider = (context: ReturnType<typeof createStatContext>, decay?: number) => {
   const Provider: FlowComponent<Props> = (props) => {
     const [lastUpdate, setLastUpdate] = createSignal(Date.now())
     const [state, setState] = createStore({
@@ -47,7 +47,7 @@ export const createStatProvider = (context: ReturnType<typeof createStatContext>
     setInterval(() => {
       if (state.timer) {
         const diff = state.timer - lastUpdate()
-        if (diff > ONE_HOUR * 4) {
+        if (diff > (decay || ONE_HOUR * 2)) {
           setState('level', state.level - 10)
           setLastUpdate(Date.now())
         }

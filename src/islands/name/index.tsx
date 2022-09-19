@@ -6,7 +6,7 @@ const Name: Component = () => {
   const [name, setName] = createSignal("John Abbott")
 
   return (
-    <div class="absolute z-50 top-7 text-lg left-0 right-0 flex justify-center">
+    <div class="absolute z-50 top-7 font-bold text-2xl left-0 right-0 flex justify-center">
       <div>
         <TextInput value={name()} onChange={setName} />
       </div>

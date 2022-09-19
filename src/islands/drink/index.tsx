@@ -8,7 +8,7 @@ const Nourish: Component = () => {
   const drink = () => {
     actions.resetTimer()
     actions.increaseLevel(5)
-    toast("You drink some water", { icon: "💦" })
+    toast("gloup gloup gloup", { icon: "💦" })
   }
 
   return (

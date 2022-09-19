@@ -8,7 +8,7 @@ const Nourish: Component = () => {
   const eat = () => {
     actions.resetTimer()
     actions.increaseLevel(5)
-    toast("You eat an apple", { icon: "🍎" })
+    toast("omnomnomnomnom", { icon: "🍎" })
   }
 
   return (
