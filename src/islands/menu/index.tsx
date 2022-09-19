@@ -34,15 +34,20 @@ const Menu: Component = () => {
             class="flex flex-col"
           >
             <Item children={() => (
-              <a href="/" class="text-slate-400/50">
-                <div class="i-carbon-home w-[50px] h-[50px] text-slate-400/50" />
+              <a href="/" class="text-purple-400/50">
+                <div class="i-carbon-home w-[50px] h-[50px]" />
               </a>
             )} />
             <Item children={<Nourish />} />
             <Item children={<Drink />} />
             <Item children={() => (
-              <a href="/rps" class="text-slate-400/50">
-                <div class="i-carbon-cut w-[50px] h-[50px] text-slate-400/50" />
+              <a href="/rps" class="text-green-800">
+                <div class="i-carbon-cut w-[50px] h-[50px]" />
+              </a>
+            )} />
+            <Item children={() => (
+              <a href="/settings" class="text-slate-400/50">
+                <div class="i-carbon-settings w-[50px] h-[50px]" />
               </a>
             )} />
           </Motion.div>

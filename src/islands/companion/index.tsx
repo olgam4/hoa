@@ -5,20 +5,69 @@ import cat0 from '@assets/cat/0.png'
 import cat1 from '@assets/cat/1.png'
 import biche0 from '@assets/biche/0.png'
 import biche1 from '@assets/biche/1.png'
+import { SkinContext } from '@context/skin'
 
 const Companion: Component = () => {
   const [quantity, setQuantity] = createSignal(0)
 
-  const add = (e: any) => {
+  const add = () => {
     setQuantity(quantity() + 1)
   }
 
+  const [state] = useContext(SkinContext)
+  const currentTileset = createMemo(() => {
+    switch (state.current!()) {
+      case 'cat':
+        return [cat0, cat1]
+      case 'biche':
+        return [biche0, biche1]
+      default:
+        return [cat0, cat1]
+    }
+  })
+  const currentSpace = createMemo(() => {
+    switch (state.current!()) {
+      case 'cat':
+        return { top: '35px' }
+      case 'biche':
+        return { left: '-30px' }
+      default:
+        return { top: '35px' }
+    }
+  })
+  const currentSize = createMemo(() => {
+    const size = {
+      'background-color': 'rgba(0, 0, 0, 0.1)',
+      opacity: 1,
+      top: '110px',
+      left: '35px',
+      transform: 'scaleY(0.4)',
+      'border-radius': '999999px',
+    }
+    switch (state.current!()) {
+      case 'cat':
+        return { ...size, width: '140px', height: '140px' }
+      case 'biche':
+        return { ...size, width: '150px', height: '150px' }
+      default:
+        return { ...size, width: '100px', height: '100px' }
+    }
+  })
+
   return (
     <div class="relative select-none w-[200px] h-[200px]" onclick={add}>
-      <div class="absolute bg-black opacity-10 h-[150px] w-[150px] scale-y-50 rounded-full top-[110px] left-[35px]" />
-      <div class="absolute -left-[30px]">
+      <div
+        id="shadow"
+        class="absolute"
+        style={currentSize()}
+      />
+      <div
+        id="companion"
+        class="absolute"
+        style={currentSpace()}
+      >
         <Animation
-          tileset={[biche0, biche1]}
+          tileset={currentTileset()}
           refresh={1000}
         />
       </div>

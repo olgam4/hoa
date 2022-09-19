@@ -5,23 +5,26 @@ import { ThemeProvider } from './theme'
 import { WaterProvider } from './water'
 import { FoodProvider } from './food'
 import { TimerProvider } from './timer'
+import { SkinProvider } from './skin'
 
 const Providers: FlowComponent = (props) => {
   return (
     <>
-      <TimerProvider>
-        <LocaleProvider>
-          <ThemeProvider>
-            <WaterProvider>
-              <FoodProvider>
-                <HealthProvider>
-                  {props.children}
-                </HealthProvider>
-              </FoodProvider>
-            </WaterProvider>
-          </ThemeProvider>
-        </LocaleProvider>
-      </TimerProvider>
+      <SkinProvider>
+        <TimerProvider>
+          <LocaleProvider>
+            <ThemeProvider>
+              <WaterProvider>
+                <FoodProvider>
+                  <HealthProvider>
+                    {props.children}
+                  </HealthProvider>
+                </FoodProvider>
+              </WaterProvider>
+            </ThemeProvider>
+          </LocaleProvider>
+        </TimerProvider>
+      </SkinProvider>
     </>
   )
 }
