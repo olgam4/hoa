@@ -13,6 +13,7 @@ export const createStatContext = () => {
       setLevel: (_level: number) => { },
       setMaxLevel: (_maxLevel: number) => { },
       resetTimer: () => { },
+      increaseLevel: (_level: number) => { },
       getTimer: () => 0,
     }
   ])
@@ -36,27 +37,31 @@ export const createStatProvider = (context: ReturnType<typeof createStatContext>
       timer: 0,
     })
 
-      const [timerState] = useContext(TimerContext)
-      createEffect(() => {
-        if (timerState.timer) {
-          setState('timer', timerState.timer)
+    const [timerState] = useContext(TimerContext)
+    createEffect(() => {
+      if (timerState.timer) {
+        setState('timer', timerState.timer)
+      }
+    })
+
+    setInterval(() => {
+      if (state.timer) {
+        const diff = state.timer - lastUpdate()
+        if (diff > ONE_HOUR * 4) {
+          setState('level', state.level - 10)
+          setLastUpdate(Date.now())
         }
-      })
-      setInterval(() => {
-        if (state.timer) {
-          const diff = state.timer - lastUpdate()
-          if (diff > ONE_HOUR * 4) {
-            setState('level', state.level - 10)
-            setLastUpdate(Date.now())
-          }
-        }
-      }, ONE_SECOND * 5)
+      }
+    }, ONE_SECOND * 5)
 
     const wa = [
       state,
       {
         setLevel: (level: number) => {
           setState('level', level)
+        },
+        increaseLevel: (level: number) => {
+          setState('level', state.level + level)
         },
         setMaxLevel: (maxLevel: number) => {
           setState({ maxLevel })
