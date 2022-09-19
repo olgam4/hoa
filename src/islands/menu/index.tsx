@@ -16,9 +16,9 @@ const Menu: Component = () => {
   const menu = createMenu()
 
   return (
-    <div class="absolute left-3 top-3">
+    <div class="absolute z-50 left-3 top-3">
       <button
-        class={`hamburger hamburger--elastic scale-90 pl-[5px] pb-1 ${menu.open() && 'is-active'}`}
+        class={`hamburger hamburger--spin scale-90 pl-[5px] pb-1 ${menu.open() && 'is-active'}`}
         onClick={menu.toggle}
       >
         <span class="hamburger-box">
