@@ -1,5 +1,5 @@
 import type { FlowComponent } from 'solid-js'
-import { createTimer } from './timer'
+import { TimerContext } from './timer'
 import { Stat } from './types'
 
 export const createStatContext = () => {
@@ -14,6 +14,7 @@ export const createStatContext = () => {
       setLevel: (_level: number) => { },
       setMaxLevel: (_maxLevel: number) => { },
       resetTimer: () => { },
+      getTimer: () => 0,
     }
   ])
 }
@@ -23,8 +24,13 @@ interface Props {
   maxLevel?: number
 }
 
+const ONE_SECOND = 1000
+const ONE_MINUTE = 60 * ONE_SECOND
+const ONE_HOUR = 60 * ONE_MINUTE
+
 export const createStatProvider = (context: ReturnType<typeof createStatContext>, name: string) => {
   const Provider: FlowComponent<Props> = (props) => {
+    const [lastUpdate, setLastUpdate] = createSignal(Date.now())
     const [state, setState] = createStore({
       level: props.level || 100,
       maxLevel: props.maxLevel || 100,
@@ -34,7 +40,24 @@ export const createStatProvider = (context: ReturnType<typeof createStatContext>
       },
     })
 
-    createTimer(state, setState, name)
+    if (name !== 'health') {
+      const [timerState] = useContext(TimerContext)
+      createEffect(() => {
+        if (timerState.timer) {
+          setState('timer', timerState.timer)
+        }
+      })
+    }
+
+    setInterval(() => {
+      if (state.timer) {
+        const diff = state.timer - lastUpdate()
+        if (diff > ONE_HOUR * 4) {
+          setState('level', state.level - 10)
+          setLastUpdate(Date.now())
+        }
+      }
+    }, ONE_SECOND * 5)
 
     const wa = [
       state,
@@ -46,7 +69,10 @@ export const createStatProvider = (context: ReturnType<typeof createStatContext>
           setState({ maxLevel })
         },
         resetTimer: () => {
-          setState('timer', 0)
+          setLastUpdate(Date.now())
+        },
+        getTimer: () => {
+          return state.timer - lastUpdate()
         }
       }
     ] as Stat

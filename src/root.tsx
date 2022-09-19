@@ -8,6 +8,7 @@ import './assets/global.css'
 import Providers from '@context/providers'
 
 export default function Root() {
+  if (!isServer) navigator.serviceWorker.register('/sw.js')
   return (
     <Html lang="en">
       <Head>

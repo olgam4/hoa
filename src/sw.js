@@ -6,13 +6,13 @@ precacheAndRoute(self.__WB_MANIFEST)
 const timeChannel = new BroadcastChannel('time');
 
 setInterval(async function() {
-  const lastResponse = JSON.parse(await localforage.getItem('last_response'));
-  timeChannel.postMessage({ from: 'timer', to: lastResponse.from, time: lastResponse.time});
+  const lastResponse = await localforage.getItem('lastResponse');
+  timeChannel.postMessage({ from: 'timer', time: lastResponse });
 }, 5000);
 
-timeChannel.onmessage = function(event) {
+timeChannel.onmessage = async function(event) {
   if (event.data.from !== 'timer') {
-    localforage.setItem('last_response', JSON.stringify({ time: event.data.time, from: event.data.from }));
+    localforage.setItem('lastResponse', event.data.time);
   }
 };
 

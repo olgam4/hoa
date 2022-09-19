@@ -3,17 +3,17 @@ import { FoodContext } from '@context/food'
 import { WaterContext } from "@context/water"
 
 const Timer: Component = () => {
-  const [foodState] = useContext(FoodContext)
-  const [drinkState] = useContext(WaterContext)
+  const [_a, foodActions] = useContext(FoodContext)
+  const [_b, drinkactions] = useContext(WaterContext)
   return (
-    <>
+    <div class="text-slate-400/50 absolute bottom-10">
       <p>
-        {foodState.timer?.toFixed(0)}s since last meal
+        {(foodActions.getTimer() / 1000).toFixed(0)}s since last meal
       </p>
       <p>
-        {drinkState.timer?.toFixed(0)}s since last water
+        {(drinkactions.getTimer() / 1000).toFixed(0)}s since last drink
       </p>
-    </>
+    </div>
   )
 }
 

@@ -9,5 +9,6 @@ export type Stat = [
     setLevel: (level: number) => void,
     setMaxLevel: (maxLevel: number) => void,
     resetTimer: () => void,
+    getTimer: () => number,
   }
 ]
