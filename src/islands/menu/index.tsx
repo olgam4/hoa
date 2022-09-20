@@ -46,6 +46,11 @@ const Menu: Component = () => {
               </a>
             )} />
             <Item children={() => (
+              <a href="/fvf" class="text-violet-700">
+                <div class="i-carbon-forward-5 w-[50px] h-[50px]" />
+              </a>
+            )} />
+            <Item children={() => (
               <a href="/settings" class="text-slate-400/50">
                 <div class="i-carbon-settings w-[50px] h-[50px]" />
               </a>

@@ -2,7 +2,9 @@ export {}
 declare module 'solid-js' {
   namespace JSX {
     interface Directives {
-      submit: (e: any) => void
+      draggable: Boolean
+      droppable: Boolean
+      handsize: Number
     }
   }
 }

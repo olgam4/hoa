@@ -90,7 +90,7 @@ export default defineConfig({
       '@motionone/solid',
       'motion',
       'solid-toast',
-      'solid-particles',
+      '@thisbeyond/solid-dnd',
     ],
   },
   resolve: {

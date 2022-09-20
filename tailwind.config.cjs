@@ -9,7 +9,7 @@ module.exports = {
 	plugins: [
     Icons({
       carbon: {
-        icons: ['apple', 'menu', 'close-outline', 'humidity', 'cut', 'home', 'settings', 'next-outline', 'previous-outline']
+        icons: ['apple', 'menu', 'close', 'forward-5', 'close-filled', 'close-outline', 'humidity', 'cut', 'home', 'settings', 'next-outline', 'previous-outline', 'arrow-up']
       }
     }),
   ],
