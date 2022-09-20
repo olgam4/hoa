@@ -122,7 +122,7 @@ const Side = (props: any) => {
 
 const FiveVFive: Component = () => {
   return (
-    <div>
+    <div class="touch-none">
       <DragDropProvider>
         <DragDropSensors>
           <Game />
