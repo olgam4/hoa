@@ -16,6 +16,7 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@islands/*": ["src/islands/*"],
+      "@lib/*": ["src/lib/*"],
       "@locales": ["src/locales"],
       "@pages/*": ["src/pages/*"],
       "@context/*": ["src/context/*"]
