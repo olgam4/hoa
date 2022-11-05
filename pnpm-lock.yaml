@@ -34,7 +34,7 @@ specifiers:
   rxjs: 7.5.6
   solid-js: 1.5.6
   solid-start: 0.1.0-alpha.104
-  solid-start-deno: 0.1.0-alpha.104
+  solid-start-deno: 0.2.5
   solid-testing-library: 0.3.0
   solid-toast: 0.3.5
   tailwindcss: 3.1.8
@@ -83,7 +83,7 @@ devDependencies:
   rxjs: 7.5.6
   solid-js: 1.5.6
   solid-start: 0.1.0-alpha.104_zbyuejlcs2b6lgl3lz7clgqbka
-  solid-start-deno: 0.1.0-alpha.104_d7e6vfdx3f2enk3dzm7l5mdrju
+  solid-start-deno: 0.2.5_d7e6vfdx3f2enk3dzm7l5mdrju
   solid-testing-library: 0.3.0_solid-js@1.5.6
   solid-toast: 0.3.5_solid-js@1.5.6
   tailwindcss: 3.1.8_postcss@8.4.16
@@ -7359,7 +7359,7 @@ packages:
       jest-worker: 26.6.2
       rollup: 2.79.1
       serialize-javascript: 4.0.0
-      terser: 5.15.0
+      terser: 5.15.1
     dev: true
 
   /rollup-plugin-visualizer/5.8.1_rollup@2.79.1:
@@ -7571,8 +7571,8 @@ packages:
       solid-js: 1.5.6
     dev: true
 
-  /solid-start-deno/0.1.0-alpha.104_d7e6vfdx3f2enk3dzm7l5mdrju:
-    resolution: {integrity: sha512-nI2PbR5PQifpld6ERBJEoyYJgwXXH/gsCExiOZy4dfnYGYU3RtRXAW/6aPuksIYvj9tzRqE4kTfPPYmckUwVIQ==}
+  /solid-start-deno/0.2.5_d7e6vfdx3f2enk3dzm7l5mdrju:
+    resolution: {integrity: sha512-ciZwk4/LhdIWEGF489lbRVU9uwxHV0kUyeqelGPieOJNVgth59mtzTI4CCBFb2Nq/GzykQdc/HSVAKr031grTw==}
     peerDependencies:
       solid-start: '*'
       vite: '*'
@@ -7582,7 +7582,7 @@ packages:
       '@rollup/plugin-node-resolve': 13.3.0_rollup@2.79.1
       rollup: 2.79.1
       solid-start: 0.1.0-alpha.104_zbyuejlcs2b6lgl3lz7clgqbka
-      terser: 5.15.0
+      terser: 5.15.1
       vite: 3.0.9
     dev: true
 
@@ -7962,6 +7962,17 @@ packages:
 
   /terser/5.15.0:
     resolution: {integrity: sha512-L1BJiXVmheAQQy+as0oF3Pwtlo4s3Wi1X2zNZ2NxOB4wx9bdS9Vk67XQENLFdLYGCK/Z2di53mTj/hBafR+dTA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jridgewell/source-map': 0.3.2
+      acorn: 8.8.0
+      commander: 2.20.3
+      source-map-support: 0.5.21
+    dev: true
+
+  /terser/5.15.1:
+    resolution: {integrity: sha512-K1faMUvpm/FBxjBXud0LWVAGxmvoPbZbfTCYbSgaaYQaIXI3/TdI7a7ZGA73Zrou6Q8Zmz3oeUTsp/dj+ag2Xw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
