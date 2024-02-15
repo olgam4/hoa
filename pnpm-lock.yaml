@@ -26,7 +26,7 @@ specifiers:
   jsdom: 20.0.0
   localforage: 1.10.0
   motion: 10.14.2
-  pnpm: 7.12.1
+  pnpm: 7.33.7
   postcss: 8.4.16
   postcss-import: 15.0.0
   postcss-preset-env: 7.8.2
@@ -75,7 +75,7 @@ devDependencies:
   jsdom: 20.0.0
   localforage: 1.10.0
   motion: 10.14.2
-  pnpm: 7.12.1
+  pnpm: 7.33.7
   postcss: 8.4.16
   postcss-import: 15.0.0_postcss@8.4.16
   postcss-preset-env: 7.8.2_postcss@8.4.16
@@ -6347,8 +6347,8 @@ packages:
       pathe: 0.3.3
     dev: true
 
-  /pnpm/7.12.1:
-    resolution: {integrity: sha512-kk60T3TKXutcEnpUNAlJBpG+PzVdYZ3e/g4eivgvmWsY4H3R/8c/nVWTS5Ji/NCPfzO2oUudkN5AyCd0eTKODQ==}
+  /pnpm/7.33.7:
+    resolution: {integrity: sha512-ev4kEGQrOcaY30baTOXHIxpczjYGmNafjPj0IlfUCz5D8jEFOwe43oSf1P+/SnH/V7g1E3d3o1I4jz09p0cgDg==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: true
